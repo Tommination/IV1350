@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd726a61-df79-4504-931c-c00f95d5f252" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IV1350Exercises.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/integration/AccountingHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/integration/InventoryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/integration/PrinterHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/integration/RegisterHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Receipt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Sale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/startup/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/startup/MainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ViewTest.java" afterDir="false" />
+    <list default="true" id="fd726a61-df79-4504-931c-c00f95d5f252" name="Changes" comment="started working on it">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/integration/InventoryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/InventoryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ItemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +23,22 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/IV1350Exercises" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+    <option name="SHOW_RECENT_BRANCHES" value="false" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 5
@@ -77,6 +77,7 @@
       <recent name="startup.testpackage" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="model" />
       <recent name="view" />
       <recent name="startup" />
     </key>
@@ -90,9 +91,30 @@
       <option name="presentableId" value="Default" />
       <updated>1714482241853</updated>
     </task>
+    <task id="LOCAL−00001" summary="started working on it">
+      <option name="closed" value="true" />
+      <created>1714489833941</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1714489833941</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="started working on it" />
+    <option name="LAST_COMMIT_MESSAGE" value="started working on it" />
   </component>
 </project>
