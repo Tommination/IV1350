@@ -2,11 +2,8 @@ package model;
 
 import DTOs.ItemDTO;
 import DTOs.SaleDTO;
-import controller.IntegrationDTO;
-import integration.AccountingHandler;
+import DTOs.IntegrationDTO;
 import integration.InventoryHandler;
-import integration.PrinterHandler;
-import integration.RegisterHandler;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -79,11 +76,25 @@ public class Sale {
         }
         return null;
     }
-    private void increaseQuantity(SaleItem item, double amount){
-        item.addQuantity(amount);
+    private void increaseQuantity(SaleItem item, double amount){ item.addQuantity(amount);
     }
+
+    /**
+     * Finishes a sale by interacting with other units and then printing a receipt
+     * @param comms
+     * @param paidAmount
+     * @return
+     */
     public  double finishSale(IntegrationDTO comms, double paidAmount){
-        comms.get
+        SaleDTO thisSale = getSaleInfo();
+        comms.getAcc().recordSale(thisSale);
+        comms.getInv().updateInventory(thisSale);
+        Payment saleFinalPayment = new Payment(thisSale, paidAmount);
+        printReceipt(saleFinalPayment);
+        return comms.getReg().updateRegister(saleFinalPayment);
+    }
+    public SaleDTO getSaleInfo(){
+        return new SaleDTO(this, itemsInSale.getLast());
     }
     private void printReceipt(Payment amount) {
         receipt.printReceipt(new SaleDTO(this, itemsInSale.getLast()), amount);
@@ -91,7 +102,7 @@ public class Sale {
 
     /**
      * saves the time when a Sale started.
-     * @return
+     * @return shows
      */
     public LocalTime getSaleTime() {
         return saleTime;

@@ -3,13 +3,10 @@ package view;
 import controller.Controller;
 import integration.AccountingHandler;
 import integration.InventoryHandler;
-import integration.PrinterHandler;
 import integration.RegisterHandler;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import javax.naming.ldap.Control;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -28,11 +25,9 @@ class ViewTest {
         InventoryHandler inv = new InventoryHandler();
         AccountingHandler acc = new AccountingHandler();
         RegisterHandler reg = new RegisterHandler();
-        PrinterHandler prnt = new PrinterHandler();
         contr.setInvHandl(inv);
         contr.setAccHandl(acc);
         contr.setRegHandl(reg);
-        contr.setPrntHandl(prnt);
 
         printoutBuffer = new ByteArrayOutputStream();
         PrintStream inMemSysOut = new PrintStream(printoutBuffer);

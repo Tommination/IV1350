@@ -1,9 +1,9 @@
 package controller;
 
+import DTOs.IntegrationDTO;
 import DTOs.SaleDTO;
 import integration.AccountingHandler;
 import integration.InventoryHandler;
-import integration.PrinterHandler;
 import integration.RegisterHandler;
 import model.Sale;
 
@@ -15,15 +15,10 @@ public class Controller {
     private InventoryHandler inv;
     private AccountingHandler acc;
     private RegisterHandler reg;
-    private PrinterHandler prnt;
     private Sale sale;
 
     public void setAccHandl(AccountingHandler acc) {
         this.acc = acc;
-    }
-
-    public void setPrntHandl(PrinterHandler prnt) {
-        this.prnt = prnt;
     }
 
     public void setInvHandl(InventoryHandler inv) {
@@ -44,6 +39,25 @@ public class Controller {
      */
     public SaleDTO scanItem(String ID){
         return sale.checkIdentifier(ID);
+    }
+    /**
+     * Signals a sale has ended, returns information about the sale to perform payment
+     */
+    public SaleDTO endSale(){
+        return sale.getSaleInfo();
+    }
+    public double enterPayment(double amount){
+        return sale.finishSale(new IntegrationDTO(this), amount);
+    }
+
+    public InventoryHandler getInv() {
+        return inv;
+    }
+    public RegisterHandler getReg() {
+        return reg;
+    }
+    public AccountingHandler getAcc(){
+        return acc;
     }
 }
 

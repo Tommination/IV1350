@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd726a61-df79-4504-931c-c00f95d5f252" name="Changes" comment="Sale fungerar som den ska, gjort test">
-      <change afterPath="$PROJECT_DIR$/src/controller/ControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/IntegrationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Payment.java" afterDir="false" />
+    <list default="true" id="fd726a61-df79-4504-931c-c00f95d5f252" name="Changes" comment="Halvvägs på endSale()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DTOs/SaleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/SaleDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/integrationUnits.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/AccountingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/AccountingHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/InventoryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/InventoryHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/RegisterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/RegisterHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IntegrationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/IntegrationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/integration/PrinterHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Receipt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Sale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SaleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SaleItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SaleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/startup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewTest.java" afterDir="false" />
     </list>
@@ -94,6 +87,7 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="DTOs" />
       <recent name="model" />
       <recent name="startup.testpackage" />
     </key>
@@ -128,7 +122,14 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1714650677565</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Halvvägs på endSale()">
+      <option name="closed" value="true" />
+      <created>1714663492960</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1714663492961</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +147,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="started working on it" />
     <MESSAGE value="Sale fungerar som den ska, gjort test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sale fungerar som den ska, gjort test" />
+    <MESSAGE value="Halvvägs på endSale()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Halvvägs på endSale()" />
   </component>
 </project>

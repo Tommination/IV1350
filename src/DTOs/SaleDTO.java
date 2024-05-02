@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class SaleDTO {
     private ArrayList<SaleItem> itemsInSale;
     private LocalTime saleTime;
-    private Receipt receipt;
     private SaleItem latestScan;
     private double total;
     private double totalVAT;
@@ -21,7 +20,6 @@ public class SaleDTO {
     public SaleDTO(Sale sale, SaleItem latest){
         itemsInSale = sale.getItemsInSale();
         saleTime = sale.getSaleTime();
-        receipt = sale.getReceipt();
         latestScan = latest;
         total = sale.getTotal();
         totalVAT = sale.getTotalVAT();
@@ -37,10 +35,6 @@ public class SaleDTO {
 
     public ArrayList<SaleItem> getItemsInSale() {
         return itemsInSale;
-    }
-
-    public Receipt getReceipt() {
-        return receipt;
     }
 
     public double getTotal() {

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Receipt {
     String itemName;
     String ID;
+    double itemCost;
     double totalCost;
     double totalVAT;
     double change;
@@ -20,12 +21,14 @@ public class Receipt {
         for (int i = 0; i < soldItems.size(); i++){
             itemName = soldItems.get(i).getItem().getName();
             ID = soldItems.get(i).getItem().getID();
+            itemCost = soldItems.get(i).getItem().getPrice();
             double quantity = soldItems.get(i).getQuantity();
-            System.out.println(itemName + "x" + quantity + " ID " + ID);
+            System.out.println(itemName  + " ID " + ID + "      " + quantity + " x " + itemCost + "      " + itemCost*quantity);
         }
         totalCost = saleInfo.getTotal();
         totalVAT = saleInfo.getTotalVAT();
         change = payment.getChange();
         System.out.println("Total cost: " + totalCost + " | Total VAT: " + totalVAT + " | Change due: " + change );
+        System.out.println("---------- END ----------");
     }
 }

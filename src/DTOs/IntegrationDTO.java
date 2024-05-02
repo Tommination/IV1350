@@ -1,20 +1,19 @@
-package controller;
+package DTOs;
 
+import controller.Controller;
 import integration.AccountingHandler;
 import integration.InventoryHandler;
-import integration.PrinterHandler;
 import integration.RegisterHandler;
 
 public class IntegrationDTO {
     InventoryHandler inv;
     AccountingHandler acc;
     RegisterHandler reg;
-    PrinterHandler prnt;
-    public IntegrationDTO(InventoryHandler inventory, AccountingHandler accounting, RegisterHandler register, PrinterHandler printer){
-        inv = inventory;
-        acc = accounting;
-        reg = register;
-        prnt = printer;
+
+    public IntegrationDTO(Controller contr){
+        inv = contr.getInv();
+        acc = contr.getAcc();
+        reg = contr.getReg();
     }
 
     public InventoryHandler getInv(){
@@ -23,5 +22,7 @@ public class IntegrationDTO {
     public AccountingHandler getAcc(){
         return acc;
     }
-
+    public RegisterHandler getReg() {
+        return reg;
+    }
 }

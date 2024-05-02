@@ -17,7 +17,7 @@ public class View {
         this.contr = contr;
     }
     /**
-     * Performs a fake sale by calling all the system operations
+     * Performs a fake sale by calling all the system operations and printing returns to console
      */
     public void runFakeExecution(){
         contr.startSale();
@@ -26,7 +26,19 @@ public class View {
         printScan(firstAdded);
         SaleDTO secondAdded = contr.scanItem("1337");
         printScan(secondAdded);
+        printEndedSale(contr.endSale());
+        double paymentAmount = 57;
+        System.out.println("Customer pays: " + paymentAmount);
+        double change = contr.enterPayment(paymentAmount);
+        System.out.println("Change to give to customer: " + change);
+
     }
+    private void printEndedSale(SaleDTO saleToPrint){
+        double cost = saleToPrint.getTotal();
+        double VAT = saleToPrint.getTotalVAT();
+        System.out.println("Sale has ended, cost: " + cost + " VAT: " + VAT);
+    }
+
     private void printScan(SaleDTO saleToPrint){
         SaleItem itemToShow = saleToPrint.getLatestScan();
         String lastItemName = itemToShow.getItem().getName();

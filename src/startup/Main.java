@@ -3,7 +3,6 @@ package startup;
 import controller.Controller;
 import integration.AccountingHandler;
 import integration.InventoryHandler;
-import integration.PrinterHandler;
 import integration.RegisterHandler;
 import view.View;
 
@@ -21,11 +20,9 @@ public class Main {
         InventoryHandler inv = new InventoryHandler();
         AccountingHandler acc = new AccountingHandler();
         RegisterHandler reg = new RegisterHandler();
-        PrinterHandler prnt = new PrinterHandler();
         contr.setInvHandl(inv);
         contr.setAccHandl(acc);
         contr.setRegHandl(reg);
-        contr.setPrntHandl(prnt);
         view.runFakeExecution();
     }
 }
