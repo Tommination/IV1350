@@ -10,6 +10,7 @@ public class Item {
     private String description;
     private double price;
     private double VATRate;
+    private String ID;
     /**
      * Creates an instance with parameters from a DTO
      */
@@ -18,9 +19,10 @@ public class Item {
         description = attributes.getDescription();
         price = attributes.getPrice();
         VATRate = attributes.getVATRate();
+        ID = attributes.getID();
     }
     public ItemDTO getItem(){
-        ItemDTO details = new ItemDTO(name, description, price, VATRate);
+        ItemDTO details = new ItemDTO(name, description, price, VATRate, ID);
         return details;
     }
 

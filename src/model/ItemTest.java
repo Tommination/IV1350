@@ -12,7 +12,7 @@ class ItemTest {
 
     @BeforeEach
     void setUp() {
-        ItemDTO testAttributes = new ItemDTO("Banan", "Gul", 12.5,0.12);
+        ItemDTO testAttributes = new ItemDTO("Banan", "Gul", 12.5,0.12, "1337");
         testInstance = new Item(testAttributes);
     }
 
@@ -48,5 +48,12 @@ class ItemTest {
         double VATSaved = readAttributes.getVATRate();
         double expectedOutput = 0.12;
         assertTrue(VATSaved == (expectedOutput), "VAT doesn't match");
+    }
+    @Test
+    void getID() {
+        ItemDTO readAttributes = testInstance.getItem();
+        String VATSaved = readAttributes.getID();
+        String expectedOutput = "1337";
+        assertTrue(VATSaved.equals(expectedOutput), "ID doesn't match");
     }
 }

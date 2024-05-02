@@ -36,7 +36,8 @@ public class Controller {
      * Starts a new sale, method must be the first called in a sale
      */
     public void startSale(){
-        sale = new Sale();
+        sale = new Sale(inv);
     }
 }
+
 
