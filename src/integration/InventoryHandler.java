@@ -1,7 +1,11 @@
 package integration;
 
 import DTOs.ItemDTO;
+import DTOs.SaleDTO;
 import model.ItemInInventory;
+import model.SaleItem;
+
+import java.util.ArrayList;
 
 /**
  * Placeholder for an actual integration class that handles inventory
@@ -23,7 +27,8 @@ public class InventoryHandler {
     dummyInventory[3] = new ItemInInventory(milk, 60);
     }
     /**
-     * Hittar ett item med matchande ID, skulle då egentligen kolla detta mot en riktig databas
+     * Finds item with matching ID, in reality would check with an actual database
+     * @param ID The identifier of a given item in a store
      */
     public ItemDTO getItemDetails(String ID){
         for (int i = 0; i < dummyInventory.length; i++){
@@ -34,6 +39,19 @@ public class InventoryHandler {
             }
         }
         return null;
+    }
+
+    /**
+     * Method that updates the inventory, would in reality interact with the database
+     * @param saleInfo information about the sale that has finished
+     */
+    public void updateInventory(SaleDTO saleInfo){
+        ArrayList<SaleItem> itemsToUpdate = saleInfo.getItemsInSale();
+        for (int i = 0; i < itemsToUpdate.size(); i++){
+            double soldItemQuantity = itemsToUpdate.get(i).getQuantity();
+            String soldItemID = itemsToUpdate.get(i).getItem().getID();
+            System.out.println("Inventory database called to decrease stock of " + soldItemID + " by " + soldItemQuantity + " units.");
+        }
     }
 
 }

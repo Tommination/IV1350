@@ -2,7 +2,11 @@ package model;
 
 import DTOs.ItemDTO;
 import DTOs.SaleDTO;
+import controller.IntegrationDTO;
+import integration.AccountingHandler;
 import integration.InventoryHandler;
+import integration.PrinterHandler;
+import integration.RegisterHandler;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -15,7 +19,8 @@ public class Sale {
     private ArrayList<SaleItem> itemsInSale;
     private LocalTime saleTime;
     private Receipt receipt;
-    private double total = 0;
+    private double totalCost = 0;
+    private double totalVAT = 0;
 
     /**
      * Creates a new instance and records the time at creation.
@@ -47,9 +52,17 @@ public class Sale {
         }
     return null;
     }
-
+    private double calculatePrice(ItemDTO product){
+       double total = (product.getPrice());
+       return total;
+    }
+    private double calculateVAT(ItemDTO product){
+        double VATCost = (product.getPrice() * product.getVATRate());
+        return VATCost;
+    }
     private void updateTotal(ItemDTO scannedItem){
-        total += scannedItem.getPrice();
+        totalCost += (calculatePrice(scannedItem) + calculateVAT(scannedItem));
+        totalVAT += calculateVAT(scannedItem);
     }
 
     private void addItemToSale(Item item){
@@ -69,11 +82,17 @@ public class Sale {
     private void increaseQuantity(SaleItem item, double amount){
         item.addQuantity(amount);
     }
-
-    public Receipt getReceipt() {
-        return receipt;
+    public  double finishSale(IntegrationDTO comms, double paidAmount){
+        comms.get
+    }
+    private void printReceipt(Payment amount) {
+        receipt.printReceipt(new SaleDTO(this, itemsInSale.getLast()), amount);
     }
 
+    /**
+     * saves the time when a Sale started.
+     * @return
+     */
     public LocalTime getSaleTime() {
         return saleTime;
     }
@@ -83,6 +102,10 @@ public class Sale {
     }
 
     public double getTotal() {
-        return total;
+        return totalCost;
+    }
+
+    public double getTotalVAT() {
+        return totalVAT;
     }
 }

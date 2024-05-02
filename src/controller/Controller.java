@@ -1,5 +1,6 @@
 package controller;
 
+import DTOs.SaleDTO;
 import integration.AccountingHandler;
 import integration.InventoryHandler;
 import integration.PrinterHandler;
@@ -37,6 +38,12 @@ public class Controller {
      */
     public void startSale(){
         sale = new Sale(inv);
+    }
+    /**
+     * Scans an item, forwards the request to be handled at an appropriate level.
+     */
+    public SaleDTO scanItem(String ID){
+        return sale.checkIdentifier(ID);
     }
 }
 

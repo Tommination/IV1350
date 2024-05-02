@@ -21,10 +21,14 @@ public class Item {
         VATRate = attributes.getVATRate();
         ID = attributes.getID();
     }
+    /**
+     * Returna an ItemDTO with the same attributes as the Item
+     */
     public ItemDTO getItem(){
         ItemDTO details = new ItemDTO(name, description, price, VATRate, ID);
         return details;
     }
+
 
 
 }

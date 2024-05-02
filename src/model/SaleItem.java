@@ -8,14 +8,19 @@ import DTOs.ItemDTO;
 public class SaleItem {
     private Item item;
     private double quantity;
+    private double VATcost;
      /**
       * Creates an instance
       */
     public SaleItem(Item good, double amount){
         item = good;
         quantity = amount;
+        setVATcost();
     }
-
+    private void setVATcost(){
+        VATcost = getItem().getPrice() * getItem().getVATRate();
+        VATcost = VATcost * quantity;
+    }
     public double getQuantity() {
         return quantity;
     }
@@ -27,5 +32,7 @@ public class SaleItem {
         return item.getItem();
     }
 
-
+    public double getVATcost() {
+        return VATcost;
+    }
 }

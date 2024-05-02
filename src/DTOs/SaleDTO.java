@@ -16,6 +16,7 @@ public class SaleDTO {
     private Receipt receipt;
     private SaleItem latestScan;
     private double total;
+    private double totalVAT;
 
     public SaleDTO(Sale sale, SaleItem latest){
         itemsInSale = sale.getItemsInSale();
@@ -23,6 +24,7 @@ public class SaleDTO {
         receipt = sale.getReceipt();
         latestScan = latest;
         total = sale.getTotal();
+        totalVAT = sale.getTotalVAT();
     }
 
     public LocalTime getSaleTime() {
@@ -43,5 +45,9 @@ public class SaleDTO {
 
     public double getTotal() {
         return total;
+    }
+
+    public double getTotalVAT() {
+        return totalVAT;
     }
 }

@@ -1,6 +1,10 @@
 package view;
 
 import controller.Controller;
+import integration.AccountingHandler;
+import integration.InventoryHandler;
+import integration.PrinterHandler;
+import integration.RegisterHandler;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,6 +25,14 @@ class ViewTest {
     void setUp() {
         Controller contr = new Controller();
         instanceToTest = new View(contr);
+        InventoryHandler inv = new InventoryHandler();
+        AccountingHandler acc = new AccountingHandler();
+        RegisterHandler reg = new RegisterHandler();
+        PrinterHandler prnt = new PrinterHandler();
+        contr.setInvHandl(inv);
+        contr.setAccHandl(acc);
+        contr.setRegHandl(reg);
+        contr.setPrntHandl(prnt);
 
         printoutBuffer = new ByteArrayOutputStream();
         PrintStream inMemSysOut = new PrintStream(printoutBuffer);
@@ -43,6 +55,5 @@ class ViewTest {
         String printout = printoutBuffer.toString();
         String expectedOutput = "started";
         assertTrue(printout.contains(expectedOutput), "UI did not not start correctly");
-
     }
 }
