@@ -1,5 +1,8 @@
 package DTOs;
 
+/**
+ * Class stores data about an Item
+ */
 public class ItemDTO {
     private final String name;
     private final String description;

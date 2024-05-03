@@ -14,6 +14,12 @@ public class Receipt {
     double totalCost;
     double totalVAT;
     double change;
+
+    /**
+     * Prints a receipt to the console
+     * @param saleInfo a SaleDTO for the sale to be printed
+     * @param payment  Payment that shows the payment to be printed
+     */
     public void printReceipt(SaleDTO saleInfo, Payment payment){
         System.out.println("---------- RECEIPT ----------");
         System.out.println("Time of Sale: " + saleInfo.getSaleTime());

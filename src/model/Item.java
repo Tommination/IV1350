@@ -13,6 +13,7 @@ public class Item {
     private String ID;
     /**
      * Creates an instance with parameters from a DTO
+     * @param attributes The DTO from which an Item is created
      */
     public Item(ItemDTO attributes){
         name = attributes.getName();
@@ -22,7 +23,7 @@ public class Item {
         ID = attributes.getID();
     }
     /**
-     * Returna an ItemDTO with the same attributes as the Item
+     * Returns an ItemDTO with the same attributes as the Item
      */
     public ItemDTO getItem(){
         ItemDTO details = new ItemDTO(name, description, price, VATRate, ID);

@@ -26,6 +26,8 @@ public class View {
         printScan(firstAdded);
         SaleDTO secondAdded = contr.scanItem("1337");
         printScan(secondAdded);
+        SaleDTO thirdAdded = contr.scanItem("1111");
+        printScan(thirdAdded);
         printEndedSale(contr.endSale());
         double paymentAmount = 57;
         System.out.println("Customer pays: " + paymentAmount);

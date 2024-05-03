@@ -10,7 +10,9 @@ public class SaleItem {
     private double quantity;
     private double VATcost;
      /**
-      * Creates an instance
+      * Creates an instance, calculates the cost of its VAT.
+      * @param amount amount how many of the object that has been scanned.
+      * @param good the Item object that has been scanned.
       */
     public SaleItem(Item good, double amount){
         item = good;
@@ -24,6 +26,11 @@ public class SaleItem {
     public double getQuantity() {
         return quantity;
     }
+
+    /**
+     * increases quantity of the item
+     * @param amount how much to increase by
+     */
     public void addQuantity(double amount){
         quantity += amount;
     }

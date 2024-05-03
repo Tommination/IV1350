@@ -9,7 +9,7 @@ public class RegisterHandler {
     /**
      * fakes an interaction with a register of some sort.
      * @param amount an instance of Payment for a given sale
-     * @return Returns the change to be used on the receipt.
+     * @return Returns the change to be given to the customer and shown on the receipt.
      */
     public double updateRegister(Payment amount){
         double change = amount.getChange();

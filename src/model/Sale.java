@@ -21,6 +21,7 @@ public class Sale {
 
     /**
      * Creates a new instance and records the time at creation.
+     * @param inv the inventoryHandler that is used to interact with inventory during a sale.
      */
     public Sale(InventoryHandler inv){
         saleTime =  LocalTime.now();
@@ -31,32 +32,56 @@ public class Sale {
 
     /**
      * Checks for an identifier in the sale and if there isnt one passes check to integration layer
+     * @param ID the identifier that is checked
      */
     public SaleDTO checkIdentifier(String ID){
-        if (IDinSale(ID) != null){
-            increaseQuantity(IDinSale(ID), 1);
-            SaleItem increasedItem = IDinSale(ID);
-            updateTotal(increasedItem.getItem());
-            return new SaleDTO(this, increasedItem);
+        if (IDinSale(ID) == true){
+            return increaseItemInSale(ID);
         }
         else {
-            if (inventory.getItemDetails(ID) != null){
-                Item itemFromDB = new Item(inventory.getItemDetails(ID));
-                updateTotal(itemFromDB.getItem());
-                addItemToSale(itemFromDB);
-                return new SaleDTO(this, itemsInSale.getLast());
+            if (itemExistsInDB(ID)){
+                return addItemFromDB(ID);
             }
         }
     return null;
     }
+
+
+    private SaleDTO addItemFromDB(String ID){
+        Item itemFromDB = new Item(inventory.getItemDetails(ID));
+        updateTotal(itemFromDB.getItem());
+        addItemToSale(itemFromDB);
+        return getSaleInfo();
+    }
+
+
+    private SaleDTO increaseItemInSale(String ID){
+            increaseQuantity(getItemInSale(ID), 1);
+            SaleItem increasedItem = getItemInSale(ID);
+            updateTotal(increasedItem.getItem());
+            return new SaleDTO(this, increasedItem);
+        }
+    
+    private boolean itemExistsInDB(String ID){
+        if (inventory.getItemDetails(ID) != null){
+            return true;
+        }
+        else return false;
+    }
+    
+    
     private double calculatePrice(ItemDTO product){
        double total = (product.getPrice());
        return total;
     }
+    
+    
     private double calculateVAT(ItemDTO product){
         double VATCost = (product.getPrice() * product.getVATRate());
         return VATCost;
     }
+    
+    
     private void updateTotal(ItemDTO scannedItem){
         totalCost += (calculatePrice(scannedItem) + calculateVAT(scannedItem));
         totalVAT += calculateVAT(scannedItem);
@@ -67,22 +92,29 @@ public class Sale {
         itemsInSale.add(itemToAdd);
     }
 
-    private SaleItem IDinSale(String ID){
+    private SaleItem getItemInSale(String ID){
         for (int i = 0; i < itemsInSale.size(); i++){
             SaleItem itemInSale = itemsInSale.get(i);
             if (itemInSale.getItem().getID().equals(ID)) {
                 return itemInSale;
             }
         }
-        return null;
+        return  null;
+    }
+    
+    private boolean IDinSale(String ID){
+        if (getItemInSale(ID) != null){
+            return true;
+        }
+        return false;
     }
     private void increaseQuantity(SaleItem item, double amount){ item.addQuantity(amount);
     }
 
     /**
      * Finishes a sale by interacting with other units and then printing a receipt
-     * @param comms
-     * @param paidAmount
+     * @param comms A DTO of integration-units so calls can happen to the right classes in integration
+     * @param paidAmount How much the customer has paid in cash
      * @return
      */
     public  double finishSale(IntegrationDTO comms, double paidAmount){
@@ -93,17 +125,19 @@ public class Sale {
         printReceipt(saleFinalPayment);
         return comms.getReg().updateRegister(saleFinalPayment);
     }
+
+    /**
+     * Returns all information about the sale without altering it.
+     * @return SaleDTO with how the sale is currently.
+     */
     public SaleDTO getSaleInfo(){
         return new SaleDTO(this, itemsInSale.getLast());
     }
+
     private void printReceipt(Payment amount) {
-        receipt.printReceipt(new SaleDTO(this, itemsInSale.getLast()), amount);
+        receipt.printReceipt(getSaleInfo(), amount);
     }
 
-    /**
-     * saves the time when a Sale started.
-     * @return shows
-     */
     public LocalTime getSaleTime() {
         return saleTime;
     }

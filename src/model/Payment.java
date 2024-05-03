@@ -2,6 +2,9 @@ package model;
 
 import DTOs.SaleDTO;
 
+/**
+ * Groups the data for a payment in one class.
+ */
 public class Payment {
     private double total;
     private double paidAmount;

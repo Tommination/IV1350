@@ -1,11 +1,14 @@
 package model;
 
+import DTOs.IntegrationDTO;
 import DTOs.SaleDTO;
 import integration.InventoryHandler;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.Enumeration;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,6 +21,9 @@ class SaleTest {
     private double expectedTotal;
     int amountOfScans = 1;
     SaleDTO saleInfo;
+    private double paidAmount = 57;
+    private ByteArrayOutputStream printoutBuffer;
+    private PrintStream originalSysOut;
     @BeforeEach
     void setUp() {
         InventoryHandler inv = new InventoryHandler();
@@ -29,6 +35,10 @@ class SaleTest {
         expectedLastItem = item;
         expectedTotal = (expectedItem.getItem().getPrice() * amountOfScans);
         expectedTotal += ((expectedItem.getItem().getPrice() * expectedItem.getItem().getVATRate()* amountOfScans));
+        printoutBuffer = new ByteArrayOutputStream();
+        PrintStream inMemSysOut = new PrintStream(printoutBuffer);
+        originalSysOut = System.out;
+        System.setOut(inMemSysOut);
 
 
     }
@@ -43,7 +53,10 @@ class SaleTest {
     void tearDown() {
         instanceToTest = null;
         expectedLastItem = null;
+        printoutBuffer = null;
         expectedTotal = 0;
+
+        System.setOut(originalSysOut);
     }
 
     @Test
@@ -66,6 +79,14 @@ class SaleTest {
         assertTrue(lastItemFound.getItem().getName().equals(expectedLastItem.getItem().getName()), "The names don't match");
         assertTrue(lastItemFound.getItem().getDescription().equals(expectedLastItem.getItem().getDescription()), "The descriptions don't match");
     }
-
-
+    @Test
+    void finishSaleTestPrints(){
+        IntegrationDTO comm = new IntegrationDTO();
+        scanItemTimes(amountOfScans);
+        String expectedOutput[] = {"units", "change", "Banana", "cost", "VAT"};
+        instanceToTest.finishSale(comm, paidAmount);
+        String printout = printoutBuffer.toString();
+        for(int i = 0; i<expectedOutput.length; i++)
+            assertTrue(printout.contains(expectedOutput[i]));
+    }
 }

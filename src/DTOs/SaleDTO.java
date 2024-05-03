@@ -8,7 +8,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 /**
- * DTO for the Sale class, also contains the latest scanned item as it interacts with the view
+ * DTO for the Sale class
  */
 public class SaleDTO {
     private ArrayList<SaleItem> itemsInSale;
@@ -17,6 +17,11 @@ public class SaleDTO {
     private double total;
     private double totalVAT;
 
+    /**
+     * Creates an instance from a sale, stores its data plus information about the latest scanned item
+     * @param sale The sale data comes from
+     * @param latest The last item scanned
+     */
     public SaleDTO(Sale sale, SaleItem latest){
         itemsInSale = sale.getItemsInSale();
         saleTime = sale.getSaleTime();

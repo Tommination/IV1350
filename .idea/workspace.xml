@@ -5,16 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd726a61-df79-4504-931c-c00f95d5f252" name="Changes" comment="Halvvägs på endSale()">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DTOs/IntegrationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/IntegrationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DTOs/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/ItemDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DTOs/SaleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/SaleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/IntegrationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/IntegrationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/PrinterHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/integration/AccountingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/AccountingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/integration/InventoryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/InventoryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/integration/RegisterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/RegisterHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Payment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Receipt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Sale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SaleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SaleItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SaleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/startup/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup/MainTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +106,46 @@
       <recent name="view" />
       <recent name="startup" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ControllerTest.checkLastItemQuantity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IV1350Exercises" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ControllerTest" />
+      <option name="METHOD_NAME" value="checkLastItemQuantity" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.checkTotal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IV1350Exercises" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ControllerTest" />
+      <option name="METHOD_NAME" value="checkTotal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ControllerTest.checkTotal" />
+        <item itemvalue="JUnit.ControllerTest.checkLastItemQuantity" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
