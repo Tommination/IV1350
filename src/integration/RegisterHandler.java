@@ -13,8 +13,8 @@ public class RegisterHandler {
      */
     public double updateRegister(Payment amount){
         double change = amount.getChange();
-        double total = amount.getTotal();
-        System.out.println("Updated register balance by adding " + total + " to the register and giving " + change + " back as change.");
+        double paidAmount = amount.getPaidAmount();
+        System.out.println("Updated register balance by adding " + paidAmount + " to the register and giving " + change + " back as change.");
         return change;
     }
 }

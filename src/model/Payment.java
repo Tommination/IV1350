@@ -2,6 +2,8 @@ package model;
 
 import DTOs.SaleDTO;
 
+import static java.lang.Math.round;
+
 /**
  * Groups the data for a payment in one class.
  */
@@ -28,9 +30,13 @@ public class Payment {
      * @return
      */
     public double getChange(){
-        return getPaidAmount() - getTotal();
+        return roundTo1Decimal(getPaidAmount()-getTotal());
     }
-    private double getPaidAmount() {
+    public double getPaidAmount() {
         return paidAmount;
+    }
+
+    private double roundTo1Decimal(Double number){
+        return (round(number*10))/10.0;
     }
 }

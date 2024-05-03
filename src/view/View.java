@@ -23,10 +23,13 @@ public class View {
         contr.startSale();
         System.out.println("A new sale has been started.");
         SaleDTO firstAdded = contr.scanItem("1337");
+        System.out.println("Add 1 item with ID: " + firstAdded.getLatestScan().getItem().getID());
         printScan(firstAdded);
         SaleDTO secondAdded = contr.scanItem("1337");
+        System.out.println("Add 1 item with ID: " + secondAdded.getLatestScan().getItem().getID());
         printScan(secondAdded);
         SaleDTO thirdAdded = contr.scanItem("1111");
+        System.out.println("Add 1 item with ID: " + thirdAdded.getLatestScan().getItem().getID());
         printScan(thirdAdded);
         printEndedSale(contr.endSale());
         double paymentAmount = 57;
@@ -46,7 +49,7 @@ public class View {
         String lastItemName = itemToShow.getItem().getName();
         String lastItemDescription = itemToShow.getItem().getDescription();
         Double lastItemQuantity = itemToShow.getQuantity();
-        double lastItemCost = itemToShow.getVATcost() + itemToShow.getItem().getPrice();
+        double lastItemCost = itemToShow.getItem().getPrice();
         double lastItemVAT = itemToShow.getVATcost();
         double totalCost = saleToPrint.getTotal();
         double totalVAT = saleToPrint.getTotalVAT();

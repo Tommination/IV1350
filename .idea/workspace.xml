@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd726a61-df79-4504-931c-c00f95d5f252" name="Changes" comment="Halvvägs på endSale()">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fd726a61-df79-4504-931c-c00f95d5f252" name="Changes" comment="färdigt med tester och kommentarer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTOs/IntegrationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/IntegrationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTOs/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/ItemDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DTOs/SaleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTOs/SaleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/AccountingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/AccountingHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/InventoryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/InventoryHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/integration/RegisterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/RegisterHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ItemTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Payment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Sale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SaleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SaleItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SaleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startup/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup/MainTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +164,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1714663492961</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="färdigt med tester och kommentarer">
+      <option name="closed" value="true" />
+      <created>1714731357337</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1714731357337</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +190,7 @@
     <MESSAGE value="started working on it" />
     <MESSAGE value="Sale fungerar som den ska, gjort test" />
     <MESSAGE value="Halvvägs på endSale()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Halvvägs på endSale()" />
+    <MESSAGE value="färdigt med tester och kommentarer" />
+    <option name="LAST_COMMIT_MESSAGE" value="färdigt med tester och kommentarer" />
   </component>
 </project>

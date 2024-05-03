@@ -1,5 +1,6 @@
 package model;
 
+import DTOs.ItemDTO;
 import DTOs.SaleDTO;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ public class Receipt {
     String itemName;
     String ID;
     double itemCost;
+    double VATcostItem;
     double totalCost;
     double totalVAT;
     double change;
@@ -29,12 +31,16 @@ public class Receipt {
             ID = soldItems.get(i).getItem().getID();
             itemCost = soldItems.get(i).getItem().getPrice();
             double quantity = soldItems.get(i).getQuantity();
-            System.out.println(itemName  + " ID " + ID + "      " + quantity + " x " + itemCost + "      " + itemCost*quantity);
+            VATcostItem = calculateVAT(soldItems.get(i).getItem()) * quantity;
+            System.out.println(itemName  + " ID " + ID + "      " + quantity + " x " + itemCost + "      " + itemCost*quantity + "      VAT: " + VATcostItem);
         }
         totalCost = saleInfo.getTotal();
         totalVAT = saleInfo.getTotalVAT();
         change = payment.getChange();
         System.out.println("Total cost: " + totalCost + " | Total VAT: " + totalVAT + " | Change due: " + change );
         System.out.println("---------- END ----------");
+    }
+    private double calculateVAT(ItemDTO item){
+        return item.getPrice()*item.getVATRate();
     }
 }
